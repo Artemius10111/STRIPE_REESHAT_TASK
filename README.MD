@@ -29,7 +29,7 @@ https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/
 
 `docker-compose exec web python manage.py makemigrations`
 
-`docker-compose exec web python manage.py createsuperuser`
+`docker-compose exec web python manage.py migrate`
 
 5.  Для просмотра моделей в админке Django необходимо создать superuser'а
 
