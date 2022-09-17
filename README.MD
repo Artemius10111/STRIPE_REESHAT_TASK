@@ -21,13 +21,17 @@ https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/
 
 `docker-compose up -d --build`
 
-3. Применить к контейнеру web миграции с помощью следующих комманд:
+3. Перейти в режим конфигурации контейнеров в фоновом режиме.
+
+`docker-compose up -d`
+
+4. Применить к контейнеру web миграции с помощью следующих комманд:
 
 `docker-compose exec web python manage.py makemigrations`
 
 `docker-compose exec web python manage.py createsuperuser`
 
-4.  Для просмотра моделей в админке Django необходимо создать superuser'а
+5.  Для просмотра моделей в админке Django необходимо создать superuser'а
 
  `docker-compose exec web python createsuperuser`
 
