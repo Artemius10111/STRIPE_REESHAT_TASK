@@ -1,0 +1,5 @@
+django==3.2
+stripe
+gunicorn
+psycopg2-binary
+django-environ

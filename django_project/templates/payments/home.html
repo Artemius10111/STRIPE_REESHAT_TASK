@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<h1>Get Item</h1>
+{% for item in items %}
+<a href="{% url 'payments:get_item' item.id %}">{{ item }}</a>
+{% endfor %}
+
+<h1>Buy Item</h1>
+{% for item in items %}
+<a href="{% url 'payments:buy_item' item.id %}">{{ item }}</a>
+{% endfor %}
+
+<h1>Get Order</h1>
+{% for order in orders %}
+<a href="{% url 'payments:get_order' order.id %}">{{ order }}</a>
+{% endfor %}
+
+<h1>Buy Order</h1>
+{% for order in orders %}
+<a href="{% url 'payments:buy_order' order.id %}">{{ order }}</a>
+{% endfor %}
+
+{% endblock content %}
+

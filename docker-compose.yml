@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./django_project
+    command: gunicorn django_project.config.wsgi:application --preload --bind 0.0.0.0:8000
+    volumes:
+      - .:/code
+    depends_on:
+    - db
+    env_file:
+      - .env
+    ports:
+      - 8000:80
+  nginx:
+      restart: always
+      image: nginx:latest
+      ports:
+        - 80:80
+      links:
+        - web
+      volumes:
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    logging:
+      driver: none
+volumes:
+  postgres_data:
