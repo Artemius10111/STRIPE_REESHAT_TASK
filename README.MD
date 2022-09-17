@@ -33,7 +33,7 @@ https://docs.google.com/document/d/1RqJhk-pRDuAk4pH1uqbY9-8uwAqEXB9eRQWLSMM_9sI/
 
 5.  Для просмотра моделей в админке Django необходимо создать superuser'а
 
- `docker-compose exec web python createsuperuser`
+ `docker-compose exec web python manage.py createsuperuser`
 
 # ГОТОВО!
 
